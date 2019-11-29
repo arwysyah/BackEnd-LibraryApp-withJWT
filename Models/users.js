@@ -7,7 +7,7 @@ module.exports = {
       data.email,
       data.password,
       data.level
-    ],(error,results,fields)=>{
+    ],(error,results)=>{
         if(error) { 
         return callBack(error)
     }
@@ -18,7 +18,7 @@ module.exports = {
   getUsers:callBack=>{
     db.query(`select id,username,email,password,level from user`,
     [],
-    (error,results,fields)=>{
+    (error,results)=>{
       if(error){
       return  callBack(error)
       }
@@ -30,7 +30,7 @@ module.exports = {
   getUserById:(id,callBack)=>{
     db.query(`select id,username,email,password,level from user where id = ?`,
     [id],
-    (error,results,fields)=>{
+    (error,results)=>{
       if(error){
       return  callBack(error)
       }
@@ -56,7 +56,7 @@ module.exports = {
   deleteUser:(data,callBack)=>{
     db.query(`delete from user where id = ?`)
     [data.id],
-    (error,results,fields)=>{
+    (error,results)=>{
       if(error){
         return callBack(error)
       }

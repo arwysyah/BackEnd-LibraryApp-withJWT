@@ -109,6 +109,13 @@ module.exports = {
 
         };
         res.json(form)
-    } 
+    } ,
+    postHistory :(res,response,status)=>{
+        const form={
+            status,response,
+        };
+        res.json(form)
+        }
+    
 }
    

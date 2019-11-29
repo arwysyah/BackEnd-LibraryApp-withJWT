@@ -108,9 +108,10 @@ module.exports = {
             }
             console.log(results)
             const result = compareSync(req.body.password, results.password)
+            console.log("req password dan hash",req.body.password, results.password)
             if (result){
                 results.password = undefined;
-                const jsontoken = sign({result:results},'kenzo',{
+                const jsontoken = sign({result:results},process.env.SECRET_KEY,{
                     expiresIn :'24h'
                 });
                 return res.json({

@@ -32,6 +32,13 @@ const auth = {
   },
 
   verifyAdmin: (req, res, next) => {
+    if (req.level === 2) {
+      next();
+    } else {
+      res.sendStatus(403);
+    }
+  },
+  verifyUser: (req, res, next) => {
     if (req.level === 1) {
       next();
     } else {
