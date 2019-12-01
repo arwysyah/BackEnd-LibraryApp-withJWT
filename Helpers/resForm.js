@@ -102,7 +102,7 @@ module.exports = {
         };
         res.json(form);
     },
-    getWishlist :(res,response,status)=>{
+    getHistory :(res,response,status)=>{
         const form = {
             status,
             response,
@@ -110,12 +110,35 @@ module.exports = {
         };
         res.json(form)
     } ,
-    postHistory :(res,response,status)=>{
+    postBorrow :(res,response,status)=>{
         const form={
             status,response,
         };
         res.json(form)
-        }
+        },
     
-}
+
    
+getWishlist :(res,response,status)=>{
+    const form = {
+        status,
+        response,
+
+    };
+    res.json(form)
+} ,
+postWishlist :(res,response,status)=>{
+    const form={
+        status,response,
+    };
+    res.json(form)
+    },
+deleteWishlist :(res,response,status)=>{
+        const form={
+            status,response,
+        };
+        res.json(form)
+        },
+    
+
+}

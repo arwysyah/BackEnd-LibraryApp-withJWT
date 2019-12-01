@@ -1,7 +1,7 @@
-const {getHistory} = require ('../Controllers/history')
+const {postWishlist} = require ('../Controllers/postWishlist')
 const express = require ('express');
 const router = express.Router() // manggil router
 
 
-router.get('/:id',getHistory)
+router.post('/',postWishlist)
 module.exports = router
